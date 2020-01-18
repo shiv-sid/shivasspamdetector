@@ -1,0 +1,33 @@
+  <!--Design the webpage to display the result (i.e) value of 'prediction' variable which is rendered from app.py -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ url_for('static',filename='style.css')}}">
+</head>
+<body>
+    <div class="container">
+      <header>
+      <h1>Spam Detector For Messages</h1>
+      </header>
+    </div>
+    <h2>Results for Comment<h2><br>
+    {% if prediction == "SPAM" %}
+    <h3 style="color:red;">SPAM</h3>
+    {% elif prediction == "NOT A SPAM" %}
+    <h3 style="color:blue;">NOT A SPAM</h3>
+    <br>
+    {% endif %}
+    <p>
+    <h4>The Above mentioned prediction is determined based on below :</h4>
+    <ol>
+      <li>The Datset from which the prediction model was formulated can be obtained from <a href="https://archive.ics.uci.edu/ml/machine-learning-databases/00228/">SMS Spam Collection</a></li>
+      <li>The formulation was made on basis of Naive-Bayes Algorithm</li>
+      <li>CountVectorizer & MultinomialNB methods are used here</li>
+      <li>The python web framework, FLASK was used to stage this</li>
+    </ol>
+</body>
+</html>

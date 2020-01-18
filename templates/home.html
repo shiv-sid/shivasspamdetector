@@ -1,0 +1,22 @@
+<!--Design the web page to get the input from user -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ url_for('static',filename='style.css')}}">
+</head>
+<body>
+    <form action="/predict" method="POST">
+        <div class="container">
+            <header>
+            <h1>Spam Detector For Messages</h1>
+            </header>
+            <h2>Enter your message here</h2><br>
+            <input style="width:800px" type="text" class="login-field"  required="" placeholder="Enter Message here" name="message"><br>
+            <input type="submit" value="Predict" class="btn-info" ><br>
+        </div>
+    </form>
+</body>
+</html>
